@@ -5,7 +5,7 @@ function get_journal_list(){
     include("connection.php");
 
     try{
-        return $db->query("SELECT id, title, date FROM entries");
+        return $db->query("SELECT id, title, date FROM entries ORDER BY date DESC");
     } catch(Exception $e) {
         echo "Error!: ".$e->getMessage()."<br>";
         return array();
